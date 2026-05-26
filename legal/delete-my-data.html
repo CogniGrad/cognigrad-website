@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete My Data – CogniGrad</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #8b5cf6;
+      --accent-2: #c4b5fd;
+      --border: rgba(255,255,255,0.08);
+      --green: #10b981;
+      --amber: #f59e0b;
+      --red: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 40px 20px;
+    }
+    .container { max-width: 700px; margin: auto; }
+    .header { text-align: center; margin-bottom: 40px; }
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    .meta { color: var(--muted); font-size: 0.9rem; }
+    .badge-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+    .badge {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+    }
+    .badge.purple { background: rgba(139,92,246,0.15); color: var(--accent-2); }
+    .badge.green { background: rgba(16,185,129,0.15); color: #6ee7b7; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+    .card p, .card li { color: var(--text); margin-bottom: 10px; }
+    .card ul { padding-left: 20px; margin: 10px 0; }
+    .alert {
+      padding: 16px;
+      border-radius: 12px;
+      margin: 20px 0;
+      border: 1px solid;
+    }
+    .alert.amber {
+      background: rgba(245,158,11,0.1);
+      border-color: rgba(245,158,11,0.3);
+      color: #fcd34d;
+    }
+    .alert.red {
+      background: rgba(239,68,68,0.1);
+      border-color: rgba(239,68,68,0.3);
+      color: #fca5a5;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      color: var(--accent-2);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: start;
+      gap: 10px;
+      margin: 20px 0;
+    }
+    .checkbox-group input {
+      margin-top: 4px;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    .btn {
+      background: var(--red);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+    }
+    .btn:hover { background: #dc2626; }
+    .btn:disabled {
+      background: #374151;
+      cursor: not-allowed;
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 15px;
+      align-items: start;
+    }
+    .timeline-badge {
+      background: var(--accent);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🗑️ Delete My Data</h1>
+      <div class="meta">
+        <strong>Your Right to Erasure</strong> under DPDP Act 2023 Section 12
+      </div>
+      <div class="badge-row">
+        <span class="badge purple">DPDP Act s.12</span>
+        <span class="badge green">30-Day SLA</span>
+        <span class="badge purple">Free of Charge</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>1. What Happens When You Delete</h2>
+      <p>Per DPDP Act 2023 Section 12, you have the right to request erasure of your personal data. Upon verification:</p>
+      <ul>
+        <li><strong>Account deleted</strong>: Profile, login, preferences removed</li>
+        <li><strong>Content deleted</strong>: Homework uploads, chat messages, forum posts anonymized or deleted</li>
+        <li><strong>Subscriptions cancelled</strong>: No future billing. No refund for current period per <a href="/refund-policy">Refund Policy</a></li>
+        <li><strong>Access revoked</strong>: You cannot login or recover data after deletion</li>
+      </ul>
+      <div class="alert amber">
+        <strong>⚠️ What We May Retain (Legal Obligation):</strong>
+        <ul style="margin-top: 10px;">
+          <li><strong>Transaction records</strong>: 7 years for tax audit per Income Tax Act</li>
+          <li><strong>POCSO recordings</strong>: If you were <18 or interacted with minors, recordings retained 180 days minimum per POCSO Act, then deleted unless legal case pending</li>
+          <li><strong>Legal disputes</strong>: Data retained till case closure if you have active complaint/legal case</li>
+          <li><strong>Anonymized data</strong>: Aggregated analytics with no personal identifiers may be retained</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>2. Deletion Timeline – 30 Days</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-badge">24 Hours</span>
+          <div>We acknowledge your request via email per IT Rules 2021</div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-badge">7 Days</span>
+          <div>Identity verification + review. We may ask for OTP or ID proof.</div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-badge">30 Days</span>
+          <div>Data erased from active systems. Backups purged in 90 days per DPDP Act.</div>
+        </div>
+      </div>
+      <p><strong>Note</strong>: If request is complex or you have legal hold, we may extend by 30 days with notice per DPDP Act s.12(3).</p>
+    </div>
+
+    <div class="card">
+      <h2>3. Request Deletion</h2>
+      <form id="delete-form" onsubmit="handleDelete(event)">
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" required placeholder="email@youused.com">
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" required placeholder="+91 98765 43210">
+        </div>
+
+        <div class="form-group">
+          <label for="reason">Reason for Deletion (Optional)</label>
+          <select id="reason">
+            <option value="">Select reason</option>
+            <option value="no_longer_using">No longer using CogniGrad</option>
+            <option value="privacy_concern">Privacy concerns</option>
+            <option value="found_alternative">Found alternative</option>
+            <option value="too_expensive">Too expensive</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="details">Additional Details (Optional)</label>
+          <textarea id="details" rows="3" placeholder="Anything else we should know?"></textarea>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="confirm1" required>
+          <label for="confirm1">I understand deletion is <strong>permanent and irreversible</strong>. I will lose access to all classes, recordings, and data.</label>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="confirm2" required>
+          <label for="confirm2">I understand some data may be retained for legal compliance (tax records, POCSO recordings) per <a href="/privacy-policy">Privacy Policy</a> Section 2.</label>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="confirm3" required>
+          <label for="confirm3">I am the account owner or parent/guardian of the account owner (if <18).</label>
+        </div>
+
+        <button type="submit" class="btn" id="submit-btn">Request Permanent Deletion</button>
+      </form>
+      <p id="status-msg" style="margin-top: 15px; color: var(--muted);"></p>
+    </div>
+
+    <div class="card">
+      <h2>4. Alternative: Deactivate Instead</h2>
+      <p>Not sure about permanent deletion? You can <strong>deactivate</strong> your account:</p>
+      <ul>
+        <li>Account hidden, not deleted</li>
+        <li>Reactivate anytime by logging in</li>
+        <li>No emails from us</li>
+        <li>Data retained for 12 months, then auto-deleted</li>
+      </ul>
+      <p>Email <a href="mailto:support@cognigrad.com">support@cognigrad.com</a> with subject "Deactivate Account" instead.</p>
+    </div>
+
+    <div class="card">
+      <h2>5. Parent/Guardian Requests (Users <18)</h2>
+      <div class="alert red">
+        <strong>🔒 Parental Right:</strong> If the account belongs to your child under 18, you may request deletion on their behalf.
+      </div>
+      <p><strong>Required</strong>:</p>
+      <ol>
+        <li>Your email must match parent email on child’s account</li>
+        <li>We may request child’s DOB + your ID proof for verification</li>
+        <li>Child will be notified of deletion request</li>
+      </ol>
+      <p>Email <a href="mailto:privacy@cognigrad.com">privacy@cognigrad.com</a> with subject "Parent Data Deletion Request – [Child Name]"</p>
+    </div>
+
+    <div class="card">
+      <h2>6. After Deletion</h2>
+      <ul>
+        <li>You will receive confirmation email when deletion completes</li>
+        <li>Attempting to login will fail – account no longer exists</li>
+        <li>If you change your mind, you must create new account. Old data cannot be recovered.</li>
+        <li>For questions, contact <a href="mailto:grievance@cognigrad.com">grievance@cognigrad.com</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-note">
+      © 2026 CogniGrad. All rights reserved. | 
+      <a href="/privacy-policy">Privacy Policy</a> | 
+      <a href="/access-my-data">Access My Data</a> | 
+      <a href="/terms-of-service">Terms</a>
+    </div>
+  </div>
+
+  <script>
+    async function handleDelete(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const status = document.getElementById('status-msg');
+      
+      btn.disabled = true;
+      btn.textContent = 'Processing...';
+      status.textContent = '';
+
+      const data = {
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        reason: document.getElementById('reason').value,
+        details: document.getElementById('details').value,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        // Send to backend - Implement /api/data/delete endpoint
+        const res = await fetch('/api/data/delete', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+          status.style.color = '#10b981';
+          status.textContent = '✓ Request received. Check your email for verification OTP. We will acknowledge within 24 hours.';
+          document.getElementById('delete-form').reset();
+        } else {
+          throw new Error('Request failed');
+        }
+      } catch (err) {
+        status.style.color = '#ef4444';
+        status.textContent = '✗ Error submitting request. Please email privacy@cognigrad.com directly.';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Request Permanent Deletion';
+      }
+    }
+  </script>
+</body>
+</html>

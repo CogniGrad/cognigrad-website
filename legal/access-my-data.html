@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Access My Data – CogniGrad</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #8b5cf6;
+      --accent-2: #c4b5fd;
+      --border: rgba(255,255,255,0.08);
+      --green: #10b981;
+      --amber: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 40px 20px;
+    }
+    .container { max-width: 700px; margin: auto; }
+    .header { text-align: center; margin-bottom: 40px; }
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    .meta { color: var(--muted); font-size: 0.9rem; }
+    .badge-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+    .badge {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+    }
+    .badge.purple { background: rgba(139,92,246,0.15); color: var(--accent-2); }
+    .badge.green { background: rgba(16,185,129,0.15); color: #6ee7b7; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      color: var(--accent-2);
+      margin: 20px 0 10px 0;
+    }
+    .card p, .card li { color: var(--text); margin-bottom: 10px; }
+    .card ul { padding-left: 20px; margin: 10px 0; }
+    .alert {
+      padding: 16px;
+      border-radius: 12px;
+      margin: 20px 0;
+      border: 1px solid;
+    }
+    .alert.green {
+      background: rgba(16,185,129,0.1);
+      border-color: rgba(16,185,129,0.3);
+      color: #6ee7b7;
+    }
+    .alert.amber {
+      background: rgba(245,158,11,0.1);
+      border-color: rgba(245,158,11,0.3);
+      color: #fcd34d;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block;
+      color: var(--accent-2);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    .form-group input, .form-group select {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 1rem;
+    }
+    .form-group input:focus, .form-group select:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin: 15px 0;
+    }
+    .checkbox-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .checkbox-item input {
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+    .btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+    }
+    .btn:hover { background: #7c3aed; }
+    .btn:disabled {
+      background: #374151;
+      cursor: not-allowed;
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 15px;
+      align-items: start;
+    }
+    .timeline-badge {
+      background: var(--accent);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📂 Access My Data</h1>
+      <div class="meta">
+        <strong>Your Right to Access</strong> under DPDP Act 2023 Section 11
+      </div>
+      <div class="badge-row">
+        <span class="badge purple">DPDP Act s.11</span>
+        <span class="badge green">30-Day SLA</span>
+        <span class="badge purple">Free of Charge</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>1. What Data Can You Access</h2>
+      <p>Per DPDP Act Section 11, you have the right to obtain from us:</p>
+      <ul>
+        <li><strong>Summary of processing</strong>: What data we have, why we process it, who we share it with</li>
+        <li><strong>Copy of personal data</strong>: Your data in portable format (JSON/CSV)</li>
+        <li><strong>Processing activities</strong>: Identities of all data processors we share with</li>
+      </ul>
+      <div class="alert green">
+        <strong>✅ Free Once Per Year:</strong> First request per calendar year is free. Subsequent requests: ₹100 processing fee per DPDP Rules.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>2. Data Categories Available</h2>
+      <p>Select which data you want to access. We’ll compile it into a secure download link:</p>
+      
+      <h3>Identity & Account</h3>
+      <div class="checkbox-grid">
+        <div class="checkbox-item">
+          <input type="checkbox" id="cat-profile" checked>
+          <label for="cat-profile">Profile: Name, Email, Phone, DOB</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="cat-login">
+          <label for="cat-login">Login History & IP Logs</label>
+        </div>
+      </div>
+
+      <h3>Learning Activity</h3>
+      <div class="checkbox-grid">
+        <div class="checkbox-item">
+          <input type="checkbox" id="cat-classes">
+          <label for="cat-classes">Class History & Attendance</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="cat-recordings">
+          <label for="cat-recordings">Session Recordings Metadata</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="cat-tests">
+          <label for="cat-tests">Test Scores & Practice Data</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="cat-ai">
+          <label for="cat-ai">AI Chat History</label>
+        </div>
+      </div>
+
+      <h3>Financial</h3>
+      <div class="checkbox-grid">
+        <div class="checkbox-item">
+          <input type="checkbox" id="cat-payments">
+          <label for="cat-payments">Payment History & Invoices</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="cat-subscriptions">
+          <label for="cat-subscriptions">Subscription Details</label>
+        </div>
+      </div>
+
+      <h3>Communications</h3>
+      <div class="checkbox-grid">
+        <div class="checkbox-item">
+          <input type="checkbox" id="cat-support">
+          <label for="cat-support">Support Tickets</label>
+        </div>
+        <div class="checkbox-item">
+          <input type="checkbox" id="cat-consent">
+          <label for="cat-consent">Consent Records</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>3. Request Your Data</h2>
+      <form id="access-form" onsubmit="handleAccess(event)">
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" required placeholder="email@youused.com">
+          <p style="font-size: 0.85rem; color: var(--muted); margin-top: 5px;">Must match email on your CogniGrad account</p>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" required placeholder="+91 98765 43210">
+        </div>
+
+        <div class="form-group">
+          <label for="format">Export Format *</label>
+          <select id="format" required>
+            <option value="json">JSON (Machine-readable, recommended)</option>
+            <option value="csv">CSV (Spreadsheet)</option>
+            <option value="pdf">PDF (Human-readable summary)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="purpose">Purpose (Optional)</label>
+          <select id="purpose">
+            <option value="">Select purpose</option>
+            <option value="personal_records">Personal records</option>
+            <option value="portability">Data portability to another service</option>
+            <option value="verification">Verify what data you hold</option>
+            <option value="legal">Legal proceedings</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="alert amber">
+          <strong>🔒 Identity Verification Required:</strong> We will send OTP to your email + phone to verify identity before releasing data. This prevents unauthorized access per DPDP Act s.11(2).
+        </div>
+
+        <button type="submit" class="btn" id="submit-btn">Request Data Export</button>
+      </form>
+      <p id="status-msg" style="margin-top: 15px; color: var(--muted);"></p>
+    </div>
+
+    <div class="card">
+      <h2>4. Processing Timeline – 30 Days</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-badge">24 Hours</span>
+          <div>We acknowledge your request via email per IT Rules 2021</div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-badge">7 Days</span>
+          <div>Identity verification via OTP. If we need ID proof, we’ll ask.</div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-badge">30 Days</span>
+          <div>Data compiled and secure download link emailed. Link expires in 7 days.</div>
+        </div>
+      </div>
+      <p><strong>Complex requests</strong>: If you request >5 categories or have large data volume, we may extend by 30 days with notice per DPDP Act s.11(3).</p>
+    </div>
+
+    <div class="card">
+      <h2>5. What We CANNOT Provide</h2>
+      <p>Per DPDP Act Section 11(2), we may refuse or redact data if:</p>
+      <ul>
+        <li><strong>Trade secrets</strong>: Our AI model weights, algorithms, business logic</li>
+        <li><strong>Third-party data</strong>: Other users’ data in your chats/recordings (redacted)</li>
+        <li><strong>Legal privilege</strong>: Communications with lawyers</li>
+        <li><strong>Ongoing investigation</strong>: Data related to fraud/POCSO investigation</li>
+        <li><strong>Technical logs</strong>: Raw server logs (we provide summary instead)</li>
+      </ul>
+      <p>If we refuse, we’ll explain why in writing within 30 days.</p>
+    </div>
+
+    <div class="card">
+      <h2>6. Parent/Guardian Requests (Users <18)</h2>
+      <p><strong>Parents</strong>: You may request your child’s data if:</p>
+      <ol>
+        <li>Child is under 18</li>
+        <li>Your email matches parent email on child’s account</li>
+        <li>You provide child’s DOB for verification</li>
+      </ol>
+      <p>Email <a href="mailto:privacy@cognigrad.com">privacy@cognigrad.com</a> with subject "Parent Data Access Request – [Child Name]"</p>
+    </div>
+
+    <div class="card">
+      <h2>7. After You Receive Data</h2>
+      <ul>
+        <li><strong>Download link expires</strong>: 7 days after email sent. Download immediately.</li>
+        <li><strong>Password protected</strong>: ZIP file password sent separately for security</li>
+        <li><strong>Questions</strong>: Email <a href="mailto:privacy@cognigrad.com">privacy@cognigrad.com</a> if you need clarification</li>
+        <li><strong>Correction</strong>: If data is wrong, request correction via <a href="mailto:privacy@cognigrad.com">privacy@cognigrad.com</a> per DPDP s.12</li>
+        <li><strong>Deletion</strong>: After reviewing, you may request deletion via <a href="/delete-my-data">Delete My Data</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>8. Contact</h2>
+      <p><strong>Data Protection Queries</strong>: <a href="mailto:privacy@cognigrad.com">privacy@cognigrad.com</a></p>
+      <p><strong>Grievance Officer</strong>: Ajit | <a href="mailto:grievance@cognigrad.com">grievance@cognigrad.com</a> | +91‑8948322222</p>
+      <p><strong>Response</strong>: 24hr acknowledgment, 30 day completion per DPDP Act</p>
+      <p><strong>Escalation</strong>: If unsatisfied, approach Data Protection Board of India</p>
+    </div>
+
+    <div class="footer-note">
+      © 2026 CogniGrad. All rights reserved. | 
+      <a href="/privacy-policy">Privacy Policy</a> | 
+      <a href="/delete-my-data">Delete My Data</a> | 
+      <a href="/terms-of-service">Terms</a>
+    </div>
+  </div>
+
+  <script>
+    async function handleAccess(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const status = document.getElementById('status-msg');
+      
+      btn.disabled = true;
+      btn.textContent = 'Processing...';
+      status.textContent = '';
+
+      const categories = [];
+      ['profile', 'login', 'classes', 'recordings', 'tests', 'ai', 'payments', 'subscriptions', 'support', 'consent'].forEach(cat => {
+        if (document.getElementById('cat-' + cat).checked) categories.push(cat);
+      });
+
+      const data = {
+        email: document.getElementById('email').value,
+        phone: document.getElementById('phone').value,
+        format: document.getElementById('format').value,
+        purpose: document.getElementById('purpose').value,
+        categories: categories,
+        timestamp: new Date().toISOString()
+      };
+
+      try {
+        // Send to backend - Implement /api/data/access endpoint
+        const res = await fetch('/api/data/access', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (res.ok) {
+          status.style.color = '#10b981';
+          status.textContent = '✓ Request received. Check your email for OTP verification. We will acknowledge within 24 hours and complete within 30 days.';
+          document.getElementById('access-form').reset();
+        } else {
+          throw new Error('Request failed');
+        }
+      } catch (err) {
+        status.style.color = '#ef4444';
+        status.textContent = '✗ Error submitting request. Please email privacy@cognigrad.com directly.';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Request Data Export';
+      }
+    }
+  </script>
+</body>
+</html>

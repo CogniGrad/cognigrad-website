@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard – CogniGrad Legal</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #8b5cf6;
+      --accent-2: #c4b5fd;
+      --border: rgba(255,255,255,0.08);
+      --green: #10b981;
+      --amber: #f59e0b;
+      --red: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .header {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .header h1 {
+      font-size: 1.5rem;
+      background: linear-gradient(135deg, #fff, var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .container { max-width: 1400px; margin: auto; padding: 30px; }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .stat-card h3 {
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .stat-card .value {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .stat-card .label {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+    .tabs {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .tab {
+      padding: 12px 20px;
+      background: transparent;
+      border: none;
+      color: var(--muted);
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      font-weight: 600;
+    }
+    .tab.active {
+      color: var(--accent-2);
+      border-bottom-color: var(--accent);
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      font-size: 1.2rem;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 12px;
+      text-align: left;
+    }
+    th {
+      background: rgba(255,255,255,0.03);
+      color: var(--accent-2);
+      font-weight: 600;
+    }
+    tr:hover { background: rgba(255,255,255,0.02); }
+    .badge {
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge.green { background: rgba(16,185,129,0.15); color: #6ee7b7; }
+    .badge.amber { background: rgba(245,158,11,0.15); color: #fcd34d; }
+    .badge.red { background: rgba(239,68,68,0.15); color: #fca5a5; }
+    .btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    .btn:hover { background: #7c3aed; }
+    .btn.small { padding: 6px 12px; font-size: 0.8rem; }
+    .btn.red { background: var(--red); }
+    .btn.red:hover { background: #dc2626; }
+    .search-bar {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      color: var(--text);
+      margin-bottom: 20px;
+    }
+    .alert {
+      padding: 16px;
+      border-radius: 8px;
+      margin: 20px 0;
+      border: 1px solid;
+    }
+    .alert.amber {
+      background: rgba(245,158,11,0.1);
+      border-color: rgba(245,158,11,0.3);
+      color: #fcd34d;
+    }
+    .empty {
+      text-align: center;
+      padding: 40px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>🛡️ CogniGrad Legal Dashboard</h1>
+    <div style="display: flex; gap: 15px; align-items: center;">
+      <span style="color: var(--muted); font-size: 0.9rem;">Admin: Ajit</span>
+      <button class="btn small" onclick="location.reload()">Refresh</button>
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Stats Overview -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h3>Consent Rate</h3>
+        <div class="value" id="stat-consent">--</div>
+        <div class="label">Users with active consent</div>
+      </div>
+      <div class="stat-card">
+        <h3>Deletion Requests</h3>
+        <div class="value" id="stat-deletion">--</div>
+        <div class="label">Pending < 30 days</div>
+      </div>
+      <div class="stat-card">
+        <h3>Copyright Notices</h3>
+        <div class="value" id="stat-copyright">--</div>
+        <div class="label">Active DMCA cases</div>
+      </div>
+      <div class="stat-card">
+        <h3>ICC Cases</h3>
+        <div class="value" id="stat-icc">--</div>
+        <div class="label">POSH complaints < 90 days</div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="tabs">
+      <button class="tab active" onclick="switchTab('consent')">Consent Logs</button>
+      <button class="tab" onclick="switchTab('deletion')">Deletion Requests</button>
+      <button class="tab" onclick="switchTab('access')">Access Requests</button>
+      <button class="tab" onclick="switchTab('copyright')">Copyright Notices</button>
+      <button class="tab" onclick="switchTab('icc')">ICC Cases</button>
+    </div>
+
+    <!-- Tab 1: Consent Logs - DPDP Act s.6 -->
+    <div id="tab-consent" class="tab-content active">
+      <div class="card">
+        <h2>Consent Audit Log – DPDP Act Section 6</h2>
+        <input type="text" class="search-bar" placeholder="Search by email, IP, date..." id="consent-search">
+        <table id="consent-table">
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Email</th>
+              <th>IP Hash</th>
+              <th>Functional</th>
+              <th>Analytics</th>
+              <th>Marketing</th>
+              <th>User Agent</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="7" class="empty">Loading... Connect /api/admin/consent-logs</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tab 2: Deletion Requests - DPDP Act s.12 -->
+    <div id="tab-deletion" class="tab-content">
+      <div class="card">
+        <h2>Data Deletion Requests – DPDP Act Section 12</h2>
+        <div class="alert amber">
+          <strong>⚠️ SLA:</strong> 30 days to complete deletion. Legal holds: tax records 7 years, POCSO recordings 180 days.
+        </div>
+        <table id="deletion-table">
+          <thead>
+            <tr>
+              <th>Request Date</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Reason</th>
+              <th>Status</th>
+              <th>Days Left</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="7" class="empty">Loading... Connect /api/admin/deletion-requests</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tab 3: Access Requests - DPDP Act s.11 -->
+    <div id="tab-access" class="tab-content">
+      <div class="card">
+        <h2>Data Access Requests – DPDP Act Section 11</h2>
+        <div class="alert amber">
+          <strong>⚠️ SLA:</strong> 30 days to provide data. First request/year free, subsequent ₹100.
+        </div>
+        <table id="access-table">
+          <thead>
+            <tr>
+              <th>Request Date</th>
+              <th>Email</th>
+              <th>Categories</th>
+              <th>Format</th>
+              <th>Status</th>
+              <th>Days Left</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="7" class="empty">Loading... Connect /api/admin/access-requests</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tab 4: Copyright Notices - Copyright Act 1957 -->
+    <div id="tab-copyright" class="tab-content">
+      <div class="card">
+        <h2>Copyright Takedown Notices – Section 52</h2>
+        <table id="copyright-table">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Complainant</th>
+              <th>Content URL</th>
+              <th>Claimed Work</th>
+              <th>Status</th>
+              <th>Action Taken</th>
+              <th>Counter-Notice</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="7" class="empty">Loading... Connect /api/admin/copyright-notices</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Tab 5: ICC Cases - POSH Act 2013 -->
+    <div id="tab-icc" class="tab-content">
+      <div class="card">
+        <h2>ICC Complaints – POSH Act 2013</h2>
+        <div class="alert amber">
+          <strong>🔒 CONFIDENTIAL:</strong> Per POSH Act s.16, ICC proceedings are confidential. Breach = penalty. 90-day inquiry timeline.
+        </div>
+        <table id="icc-table">
+          <thead>
+            <tr>
+              <th>Case ID</th>
+              <th>Date Filed</th>
+              <th>Complainant Role</th>
+              <th>Respondent Role</th>
+              <th>Status</th>
+              <th>Days Open</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="7" class="empty">Loading... Connect /api/admin/icc-cases</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  <script>
+    // Tab Switching
+    function switchTab(tab) {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+      event.target.classList.add('active');
+      document.getElementById('tab-' + tab).classList.add('active');
+    }
+
+    // Load Stats - Implement /api/admin/stats
+    async function loadStats() {
+      try {
+        const res = await fetch('/api/admin/stats');
+        const data = await res.json();
+        document.getElementById('stat-consent').textContent = data.consentRate + '%';
+        document.getElementById('stat-deletion').textContent = data.pendingDeletions;
+        document.getElementById('stat-copyright').textContent = data.activeCopyright;
+        document.getElementById('stat-icc').textContent = data.activeICC;
+      } catch (e) {
+        console.log('Stats load failed - implement /api/admin/stats');
+      }
+    }
+
+    // Load Consent Logs - Implement /api/admin/consent-logs
+    async function loadConsentLogs() {
+      try {
+        const res = await fetch('/api/admin/consent-logs');
+        const data = await res.json();
+        const tbody = document.querySelector('#consent-table tbody');
+        tbody.innerHTML = data.logs.map(log => `
+          <tr>
+            <td>${new Date(log.timestamp).toLocaleString()}</td>
+            <td>${log.email}</td>
+            <td><code>${log.ip_hash.substring(0, 8)}...</code></td>
+            <td><span class="badge ${log.functional ? 'green' : 'red'}">${log.functional ? 'Yes' : 'No'}</span></td>
+            <td><span class="badge ${log.analytics ? 'green' : 'red'}">${log.analytics ? 'Yes' : 'No'}</span></td>
+            <td><span class="badge ${log.marketing ? 'green' : 'red'}">${log.marketing ? 'Yes' : 'No'}</span></td>
+            <td style="font-size: 0.75rem;">${log.user_agent.substring(0, 30)}...</td>
+          </tr>
+        `).join('');
+      } catch (e) {
+        console.log('Consent logs load failed');
+      }
+    }
+
+    // Load Deletion Requests - Implement /api/admin/deletion-requests
+    async function loadDeletionRequests() {
+      try {
+        const res = await fetch('/api/admin/deletion-requests');
+        const data = await res.json();
+        const tbody = document.querySelector('#deletion-table tbody');
+        tbody.innerHTML = data.requests.map(req => {
+          const daysLeft = Math.max(0, 30 - Math.floor((Date.now() - new Date(req.request_date)) / 86400000));
+          return `
+          <tr>
+            <td>${new Date(req.request_date).toLocaleDateString()}</td>
+            <td>${req.email}</td>
+            <td>${req.phone}</td>
+            <td>${req.reason || '-'}</td>
+            <td><span class="badge ${req.status === 'completed' ? 'green' : 'amber'}">${req.status}</span></td>
+            <td>${daysLeft}</td>
+            <td>
+              <button class="btn small" onclick="approveDeletion('${req.id}')">Approve</button>
+              <button class="btn small red" onclick="rejectDeletion('${req.id}')">Reject</button>
+            </td>
+          </tr>
+        `}).join('');
+      } catch (e) {
+        console.log('Deletion requests load failed');
+      }
+    }
+
+    // Placeholder functions - Implement these
+    function approveDeletion(id) {
+      if (confirm('Approve deletion? This will permanently delete user data.')) {
+        fetch(`/api/admin/deletion-requests/${id}/approve`, { method: 'POST' })
+          .then(() => location.reload());
+      }
+    }
+    function rejectDeletion(id) {
+      const reason = prompt('Reason for rejection:');
+      if (reason) {
+        fetch(`/api/admin/deletion-requests/${id}/reject`, { 
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ reason })
+        }).then(() => location.reload());
+      }
+    }
+
+    // Load on page load
+    loadStats();
+    loadConsentLogs();
+    loadDeletionRequests();
+    // Add similar load functions for access, copyright, ICC tabs
+
+    // Auto-refresh every 60 seconds
+    setInterval(() => {
+      loadStats();
+      loadConsentLogs();
+    }, 60000);
+  </script>
+</body>
+</html>

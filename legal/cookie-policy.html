@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cookie Policy – CogniGrad</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #8b5cf6;
+      --accent-2: #c4b5fd;
+      --border: rgba(255,255,255,0.08);
+      --green: #10b981;
+      --amber: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 40px 20px;
+    }
+    .container { max-width: 900px; margin: auto; }
+    .header { text-align: center; margin-bottom: 40px; }
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    .meta { color: var(--muted); font-size: 0.9rem; }
+    .badge-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+    .badge {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+    }
+    .badge.purple { background: rgba(139,92,246,0.15); color: var(--accent-2); }
+    .badge.green { background: rgba(16,185,129,0.15); color: #6ee7b7; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      color: var(--accent-2);
+      margin: 20px 0 10px 0;
+    }
+    .card p, .card li { color: var(--text); margin-bottom: 10px; }
+    .card ul { padding-left: 20px; margin: 10px 0; }
+    .card li { margin-bottom: 8px; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 15px 0;
+    }
+    th, td {
+      border: 1px solid var(--border);
+      padding: 12px;
+      text-align: left;
+    }
+    th { background: rgba(255,255,255,0.03); color: var(--accent-2); }
+    .alert {
+      padding: 16px;
+      border-radius: 12px;
+      margin: 20px 0;
+      border: 1px solid;
+    }
+    .alert.green {
+      background: rgba(16,185,129,0.1);
+      border-color: rgba(16,185,129,0.3);
+      color: #6ee7b7;
+    }
+    .alert.amber {
+      background: rgba(245,158,11,0.1);
+      border-color: rgba(245,158,11,0.3);
+      color: #fcd34d;
+    }
+    .consent-panel {
+      background: rgba(139,92,246,0.08);
+      border: 1px solid rgba(139,92,246,0.3);
+      border-radius: 12px;
+      padding: 25px;
+      margin: 25px 0;
+    }
+    .toggle-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .toggle-row:last-child { border-bottom: none; }
+    .toggle-info h4 { color: #fff; margin-bottom: 5px; }
+    .toggle-info p { color: var(--muted); font-size: 0.9rem; margin: 0; }
+    .toggle {
+      position: relative;
+      width: 50px;
+      height: 26px;
+      background: #374151;
+      border-radius: 13px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .toggle.active { background: var(--accent); }
+    .toggle.disabled { opacity: 0.5; cursor: not-allowed; }
+    .toggle::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      top: 3px;
+      left: 3px;
+      transition: 0.3s;
+    }
+    .toggle.active::after { left: 27px; }
+    .btn {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    .btn:hover { background: #7c3aed; }
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🍪 Cookie Policy</h1>
+      <div class="meta">
+        <strong>Effective Date:</strong> June 1, 2026 | <strong>Last Updated:</strong> May 25, 2026
+      </div>
+      <div class="badge-row">
+        <span class="badge purple">DPDP Act 2023</span>
+        <span class="badge purple">IT Rules 2021</span>
+        <span class="badge green">Consent Based</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>1. What Are Cookies</h2>
+      <p>Cookies are small text files stored on your device when you visit CogniGrad. They help us provide core functionality, remember preferences, analyze usage, and comply with DPDP Act 2023.</p>
+      <p><strong>Legal Basis:</strong> Per DPDP Act Section 6, we obtain your explicit consent before using non-essential cookies. Essential cookies run on "Legitimate Use" s.7(c).</p>
+    </div>
+
+    <div class="card">
+      <h2>2. Types of Cookies We Use</h2>
+      <table>
+        <tr>
+          <th>Category</th>
+          <th>Purpose</th>
+          <th>Examples</th>
+          <th>Consent Required</th>
+          <th>Duration</th>
+        </tr>
+        <tr>
+          <td><strong>Essential</strong></td>
+          <td>Login, security, load balancing. Site won’t work without these.</td>
+          <td><code>session_id</code>, <code>csrf_token</code>, <code>auth_token</code></td>
+          <td>No – Legitimate Use</td>
+          <td>Session / 7 days</td>
+        </tr>
+        <tr>
+          <td><strong>Functional</strong></td>
+          <td>Remember language, theme, tutor filters</td>
+          <td><code>lang_pref</code>, <code>theme_dark</code></td>
+          <td>Yes – Consent</td>
+          <td>1 year</td>
+        </tr>
+        <tr>
+          <td><strong>Analytics</strong></td>
+          <td>Understand usage, improve features. IP anonymized.</td>
+          <td><code>_ga</code>, <code>_gid</code> (Google Analytics)</td>
+          <td>Yes – Consent</td>
+          <td>2 years</td>
+        </tr>
+        <tr>
+          <td><strong>Marketing</strong></td>
+          <td>Measure ad performance. <strong>Disabled for users <18</strong></td>
+          <td><code>_fbp</code>, <code>_gcl_au</code></td>
+          <td>Yes – Consent</td>
+          <td>90 days</td>
+        </tr>
+      </table>
+      <div class="alert amber">
+        <strong>⚠️ Children <18:</strong> Per DPDP Act Section 9, we automatically disable Analytics + Marketing cookies for users under 18. Only Essential + Functional cookies run.
+      </div>
+    </div>
+
+    <div class="card" id="manage">
+      <h2>3. Manage Your Cookie Preferences</h2>
+      <p>You can accept, reject, or customize cookies anytime. Changes take effect immediately. We log your consent with timestamp + IP per DPDP Act s.6 audit requirements.</p>
+      
+      <div class="consent-panel">
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <h4>Essential Cookies</h4>
+            <p>Required for login, security, payments. Cannot be disabled.</p>
+          </div>
+          <div class="toggle active disabled"></div>
+        </div>
+
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <h4>Functional Cookies</h4>
+            <p>Remember your preferences like language and theme.</p>
+          </div>
+          <div class="toggle active" id="toggle-functional" onclick="toggleConsent('functional')"></div>
+        </div>
+
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <h4>Analytics Cookies</h4>
+            <p>Help us improve CogniGrad. No personal data collected.</p>
+          </div>
+          <div class="toggle" id="toggle-analytics" onclick="toggleConsent('analytics')"></div>
+        </div>
+
+        <div class="toggle-row">
+          <div class="toggle-info">
+            <h4>Marketing Cookies</h4>
+            <p>Measure ad campaigns. Disabled for users under 18.</p>
+          </div>
+          <div class="toggle" id="toggle-marketing" onclick="toggleConsent('marketing')"></div>
+        </div>
+
+        <button class="btn" onclick="saveConsent()">Save Preferences</button>
+        <p id="consent-status" style="color: var(--muted); font-size: 0.85rem; margin-top: 10px;"></p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>4. Third-Party Cookies</h2>
+      <p>We use these trusted partners. They have their own policies:</p>
+      <ul>
+        <li><strong>Google Analytics</strong>: Usage analytics. <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a> | Opt-out: <a href="https://tools.google.com/dlpage/gaoptout" target="_blank">Browser Add-on</a></li>
+        <li><strong>Razorpay</strong>: Payment processing. <a href="https://razorpay.com/privacy/" target="_blank">Privacy Policy</a></li>
+        <li><strong>AWS CloudFront</strong>: CDN for fast loading. <a href="https://aws.amazon.com/privacy/" target="_blank">Privacy Policy</a></li>
+      </ul>
+      <p>We have Data Processing Agreements (DPAs) with all vendors per DPDP Act Section 8.</p>
+    </div>
+
+    <div class="card">
+      <h2>5. How to Delete Cookies</h2>
+      <p>You can delete cookies via your browser settings:</p>
+      <ul>
+        <li><strong>Chrome</strong>: Settings → Privacy → Clear browsing data</li>
+        <li><strong>Firefox</strong>: Settings → Privacy → Cookies → Clear</li>
+        <li><strong>Safari</strong>: Preferences → Privacy → Manage Website Data</li>
+      </ul>
+      <p><strong>Note</strong>: Deleting essential cookies will log you out of CogniGrad.</p>
+    </div>
+
+    <div class="card">
+      <h2>6. Your Rights – DPDP Act 2023</h2>
+      <ul>
+        <li><strong>Withdraw Consent s.6(4)</strong>: Use panel above or email <a href="mailto:privacy@cognigrad.com">privacy@cognigrad.com</a>. Takes effect immediately.</li>
+        <li><strong>Access Cookie Data s.11</strong>: Request list of cookies we set → <a href="/access-my-data">Access My Data</a></li>
+        <li><strong>Erasure s.12</strong>: Delete all non-essential cookies via browser + we delete server logs in 30 days → <a href="/delete-my-data">Delete My Data</a></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>7. Updates</h2>
+      <p>We update this policy for legal/technical changes. Material changes notified via email + banner 30 days prior. Check "Last Updated" date above.</p>
+    </div>
+
+    <div class="card">
+      <h2>8. Contact</h2>
+      <p><strong>Privacy Queries</strong>: <a href="mailto:privacy@cognigrad.com">privacy@cognigrad.com</a></p>
+      <p><strong>Grievance Officer</strong>: Ajit | <a href="mailto:grievance@cognigrad.com">grievance@cognigrad.com</a> | +91‑8948322222<br>
+      Response: 24hr acknowledgment, 15 day resolution per IT Rules 2021</p>
+    </div>
+
+    <div class="footer-note">
+      © 2026 CogniGrad. All rights reserved. | 
+      <a href="/privacy-policy">Privacy Policy</a> | 
+      <a href="/terms-of-service">Terms</a> | 
+      <a href="/community-guidelines">Community</a>
+    </div>
+  </div>
+
+  <script>
+    // Cookie Consent Manager - DPDP Act 2023 Compliant
+    const CONSENT_KEY = 'cognigrad_cookie_consent_v1';
+    
+    function loadConsent() {
+      const saved = localStorage.getItem(CONSENT_KEY);
+      if (saved) {
+        const consent = JSON.parse(saved);
+        document.getElementById('toggle-functional').classList.toggle('active', consent.functional);
+        document.getElementById('toggle-analytics').classList.toggle('active', consent.analytics);
+        document.getElementById('toggle-marketing').classList.toggle('active', consent.marketing);
+        document.getElementById('consent-status').textContent = 
+          'Last updated: ' + new Date(consent.timestamp).toLocaleString();
+      }
+    }
+    
+    function toggleConsent(type) {
+      const toggle = document.getElementById('toggle-' + type);
+      toggle.classList.toggle('active');
+    }
+    
+    function saveConsent() {
+      const consent = {
+        essential: true, // Always true
+        functional: document.getElementById('toggle-functional').classList.contains('active'),
+        analytics: document.getElementById('toggle-analytics').classList.contains('active'),
+        marketing: document.getElementById('toggle-marketing').classList.contains('active'),
+        timestamp: new Date().toISOString(),
+        ip_hash: 'hashed_on_server', // Server should log IP hash
+        user_agent: navigator.userAgent
+      };
+      
+      // Save to localStorage
+      localStorage.setItem(CONSENT_KEY, JSON.stringify(consent));
+      
+      // Send to server for DPDP audit log - Implement this endpoint
+      fetch('/api/consent/log', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(consent)
+      }).catch(e => console.log('Consent log failed:', e));
+      
+      document.getElementById('consent-status').textContent = 
+        'Preferences saved: ' + new Date().toLocaleString();
+      
+      // Reload to apply changes
+      setTimeout(() => location.reload(), 500);
+    }
+    
+    // Load on page load
+    loadConsent();
+  </script>
+</body>
+</html>

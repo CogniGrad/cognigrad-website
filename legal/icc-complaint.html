@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ICC Complaint – Sexual Harassment – CogniGrad</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #8b5cf6;
+      --accent-2: #c4b5fd;
+      --border: rgba(255,255,255,0.08);
+      --green: #10b981;
+      --amber: #f59e0b;
+      --red: #ef4444;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 40px 20px;
+    }
+   .container { max-width: 800px; margin: auto; }
+   .header { text-align: center; margin-bottom: 40px; }
+   .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+   .meta { color: var(--muted); font-size: 0.9rem; }
+   .badge-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+   .badge {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+    }
+   .badge.purple { background: rgba(139,92,246,0.15); color: var(--accent-2); }
+   .badge.red { background: rgba(239,68,68,0.15); color: #fca5a5; }
+   .badge.green { background: rgba(16,185,129,0.15); color: #6ee7b7; }
+   .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+   .card h2 {
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 15px;
+    }
+   .card h3 {
+      font-size: 1.1rem;
+      color: var(--accent-2);
+      margin: 20px 0 10px 0;
+    }
+   .card p,.card li { color: var(--text); margin-bottom: 10px; }
+   .card ul,.card ol { padding-left: 20px; margin: 10px 0; }
+   .alert {
+      padding: 16px;
+      border-radius: 12px;
+      margin: 20px 0;
+      border: 1px solid;
+    }
+   .alert.red {
+      background: rgba(239,68,68,0.1);
+      border-color: rgba(239,68,68,0.3);
+      color: #fca5a5;
+    }
+   .alert.green {
+      background: rgba(16,185,129,0.1);
+      border-color: rgba(16,185,129,0.3);
+      color: #6ee7b7;
+    }
+   .alert.amber {
+      background: rgba(245,158,11,0.1);
+      border-color: rgba(245,158,11,0.3);
+      color: #fcd34d;
+    }
+   .form-group { margin-bottom: 20px; }
+   .form-group label {
+      display: block;
+      color: var(--accent-2);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+   .form-group input,.form-group select,.form-group textarea {
+      width: 100%;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      color: var(--text);
+      font-family: inherit;
+      font-size: 1rem;
+    }
+   .form-group input:focus,.form-group select:focus,.form-group textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+   .form-group textarea { min-height: 120px; resize: vertical; }
+   .radio-group {
+      display: flex;
+      gap: 20px;
+      margin: 10px 0;
+    }
+   .radio-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+   .checkbox-group {
+      display: flex;
+      align-items: start;
+      gap: 10px;
+      margin: 20px 0;
+    }
+   .checkbox-group input {
+      margin-top: 4px;
+      width: 18px;
+      height: 18px;
+      cursor: pointer;
+    }
+   .btn {
+      background: var(--red);
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      width: 100%;
+    }
+   .btn:hover { background: #dc2626; }
+   .btn:disabled {
+      background: #374151;
+      cursor: not-allowed;
+    }
+   .icc-members {
+      background: rgba(139,92,246,0.08);
+      border: 1px solid rgba(139,92,246,0.3);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+   .icc-member {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+   .icc-member:last-child { border-bottom: none; }
+   .icc-member strong { color: #fff; }
+    a { color: var(--accent-2); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+   .footer-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🛡️ ICC Complaint Form</h1>
+      <div class="meta">
+        <strong>Sexual Harassment Complaint</strong> under POSH Act 2013
+      </div>
+      <div class="badge-row">
+        <span class="badge purple">POSH Act 2013</span>
+        <span class="badge red">Confidential</span>
+        <span class="badge green">90-Day Resolution</span>
+        <span class="badge purple">No Retaliation</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>1. Your Rights – POSH Act 2013</h2>
+      <div class="alert green">
+        <strong>✅ ZERO TOLERANCE:</strong> CogniGrad has zero tolerance for sexual harassment. Your complaint will be handled confidentially by our Internal Complaints Committee (ICC).
+      </div>
+      <p><strong>You have the right to:</strong></p>
+      <ul>
+        <li>File complaint within <strong>3 months</strong> of incident (extendable to 6 months with valid reason)</li>
+        <li><strong>Confidentiality</strong>: Your identity, respondent identity, and proceedings are confidential. Breach = penalty per POSH Act s.16</li>
+        <li><strong>No retaliation</strong>: You cannot be punished for filing complaint in good faith</li>
+        <li><strong>Interim relief</strong>: Transfer, leave, or other relief during inquiry per s.12</li>
+        <li><strong>Appeal</strong>: Appeal to court/tribunal within 90 days if unsatisfied per s.18</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>2. What is Sexual Harassment?</h2>
+      <p>Per POSH Act Section 2(n), sexual harassment includes:</p>
+      <ul>
+        <li><strong>Physical contact and advances</strong></li>
+        <li><strong>Demand/request for sexual favors</strong></li>
+        <li><strong>Sexually colored remarks</strong>: Jokes, comments on appearance</li>
+        <li><strong>Showing pornography</strong></li>
+        <li><strong>Any unwelcome physical, verbal, or non-verbal conduct of sexual nature</strong></li>
+        <li><strong>Quid pro quo</strong>: Implied/explicit promise of preferential treatment or threat of detriment</li>
+        <li><strong>Hostile work environment</strong>: Creating intimidating/offensive environment</li>
+      </ul>
+      <p><strong>Applies to</strong>: Students, tutors, employees, parents, visitors. Online + offline.</p>
+    </div>
+
+    <div class="card">
+      <h2>3. Internal Complaints Committee (ICC)</h2>
+      <div class="icc-members">
+        <p style="color: var(--accent-2); font-weight: 600; margin-bottom: 15px;">CogniGrad ICC Members (as of May 2026):</p>
+        <div class="icc-member">
+          <strong>Presiding Officer:</strong> [Name], Senior Female Employee
+        </div>
+        <div class="icc-member">
+          <strong>Member 1:</strong> [Name], Legal/HR Representative
+        </div>
+        <div class="icc-member">
+          <strong>Member 2:</strong> [Name], Employee Representative
+        </div>
+        <div class="icc-member">
+          <strong>External Member:</strong> [Name], NGO/Lawyer familiar with sexual harassment issues (per POSH s.4)
+        </div>
+        <p style="margin-top: 15px; font-size: 0.9rem; color: var(--muted);">
+          ICC reconstituted every 3 years per POSH Act. At least 50% women. External member mandatory.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>4. File Your Complaint</h2>
+      <div class="alert amber">
+        <strong>⚠️ Important:</strong> Provide as much detail as possible. You may file anonymously, but ICC may need to contact you for inquiry. False complaints = penalty per s.14.
+      </div>
+      <form id="icc-form" onsubmit="handleICC(event)">
+        <h3>Complainant Details</h3>
+        <div class="form-group">
+          <label for="name">Your Full Name *</label>
+          <input type="text" id="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address *</label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" required>
+        </div>
+
+        <div class="form-group">
+          <label for="role">Your Role at CogniGrad *</label>
+          <select id="role" required>
+            <option value="">Select</option>
+            <option value="student">Student</option>
+            <option value="tutor">Tutor</option>
+            <option value="parent">Parent/Guardian</option>
+            <option value="employee">Employee</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <h3>Respondent Details (Person Complained Against)</h3>
+        <div class="form-group">
+          <label for="respondent-name">Respondent Full Name *</label>
+          <input type="text" id="respondent-name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="respondent-role">Respondent Role *</label>
+          <select id="respondent-role" required>
+            <option value="">Select</option>
+            <option value="student">Student</option>
+            <option value="tutor">Tutor</option>
+            <option value="employee">Employee</option>
+            <option value="unknown">Unknown</option>
+          </select>
+        </div>
+
+        <h3>Incident Details</h3>
+        <div class="form-group">
+          <label for="incident-date">Date of Incident * (approx if not sure)</label>
+          <input type="date" id="incident-date" required max="2026-05-25">
+        </div>
+
+        <div class="form-group">
+          <label for="incident-time">Time of Incident</label>
+          <input type="time" id="incident-time">
+        </div>
+
+        <div class="form-group">
+          <label for="incident-location">Location/Platform *</label>
+          <select id="incident-location" required>
+            <option value="">Select</option>
+            <option value="live_class">Live Class (Online)</option>
+            <option value="chat">CogniGrad Chat</option>
+            <option value="email">Email</option>
+            <option value="whatsapp">WhatsApp (Outside Platform)</option>
+            <option value="in_person">In Person</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="incident-description">Describe the Incident * (Min 50 characters)</label>
+          <textarea id="incident-description" required minlength="50" placeholder="Describe what happened, including words/actions, dates, witnesses. Be as specific as possible."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="witnesses">Witnesses (if any)</label>
+          <input type="text" id="witnesses" placeholder="Names of people who saw/heard incident">
+        </div>
+
+        <div class="form-group">
+          <label for="evidence">Evidence (Optional)</label>
+          <input type="file" id="evidence" multiple accept="image/*,.pdf,.doc,.docx">
+          <p style="font-size: 0.85rem; color: var(--muted); margin-top: 5px;">Upload screenshots, emails, recordings. Max 10MB per file.</p>
+        </div>
+
+        <h3>Relief Sought</h3>
+        <div class="form-group">
+          <label>What action do you want? (Select all that apply)</label>
+          <div class="checkbox-group">
+            <input type="checkbox" id="relief-apology">
+            <label for="relief-apology">Written apology from respondent</label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="relief-warning">
+            <label for="relief-warning">Warning to respondent</label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="relief-termination">
+            <label for="relief-termination">Termination of respondent</label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="relief-transfer">
+            <label for="relief-transfer">Transfer me to different class/tutor</label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="relief-compensation">
+            <label for="relief-compensation">Compensation for mental trauma (per s.15)</label>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="relief-other">
+            <label for="relief-other">Other (specify below)</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="relief-details">Other Relief Details</label>
+          <textarea id="relief-details" rows="2"></textarea>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="confirm-truth" required>
+          <label for="confirm-truth">I declare that the information provided is true to the best of my knowledge. I understand that false complaint is punishable per POSH Act Section 14.</label>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="confirm-confidential" required>
+          <label for="confirm-confidential">I understand that ICC proceedings are confidential per POSH Act Section 16. I will not disclose details to third parties.</label>
+        </div>
+
+        <button type="submit" class="btn" id="submit-btn">Submit Confidential Complaint</button>
+      </form>
+      <p id="status-msg" style="margin-top: 15px; color: var(--muted);"></p>
+    </div>
+
+    <div class="card">
+      <h2>5. What Happens Next – 90 Day Process</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-badge">24 Hours</span>
+          <div>ICC acknowledges receipt. Presiding Officer contacts you.</div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-badge">7 Days</span>
+          <div>ICC forwards complaint to respondent. Respondent replies in 10 days.</div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-badge">90 Days</span>
+          <div>ICC completes inquiry. Submits report to CogniGrad with recommendations.</div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-badge">60 Days</span>
+          <div>CogniGrad acts on ICC recommendations: warning, termination, compensation, etc.</div>
+        </div>
+      <div class="alert green">
+        <strong>✅ No Retaliation:</strong> Per POSH Act s.12, you cannot be penalized for filing complaint. If respondent retaliates, report immediately – separate offence.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>6. Emergency Contacts</h2>
+      <p><strong>If you are in immediate danger:</strong></p>
+      <ul>
+        <li><strong>Police</strong>: 100 / 112</li>
+        <li><strong>Women Helpline</strong>: 1091</li>
+        <li><strong>Childline</strong> (if <18): 1098</li>
+        <li><strong>NCW</strong>: 011-26942369</li>
+      </ul>
+      <p><strong>ICC Contact</strong>: <a href="mailto:icc@cognigrad.com">icc@cognigrad.com</a></p>
+      <p><strong>Grievance Officer</strong>: Ajit | <a href="mailto:grievance@cognigrad.com">grievance@cognigrad.com</a> | +91‑8948322222</p>
+    </div>
+
+    <div class="footer-note">
+      © 2026 CogniGrad. All rights reserved. |
+      <a href="/privacy-policy">Privacy</a> |
+      <a href="/community-guidelines">Community Guidelines</a> |
+      <a href="/terms-of-service">Terms</a>
+    </div>
+  </div>
+
+  <script>
+    async function handleICC(e) {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      const status = document.getElementById('status-msg');
+
+      btn.disabled = true;
+      btn.textContent = 'Submitting...';
+      status.textContent = '';
+
+      const formData = new FormData();
+      formData.append('name', document.getElementById('name').value);
+      formData.append('email', document.getElementById('email').value);
+      formData.append('phone', document.getElementById('phone').value);
+      formData.append('role', document.getElementById('role').value);
+      formData.append('respondent_name', document.getElementById('respondent-name').value);
+      formData.append('respondent_role', document.getElementById('respondent-role').value);
+      formData.append('incident_date', document.getElementById('incident-date').value);
+      formData.append('incident_time', document.getElementById('incident-time').value);
+      formData.append('incident_location', document.getElementById('incident-location').value);
+      formData.append('incident_description', document.getElementById('incident-description').value);
+      formData.append('witnesses', document.getElementById('witnesses').value);
+      formData.append('relief_details', document.getElementById('relief-details').value);
+      formData.append('timestamp', new Date().toISOString());
+
+      const files = document.getElementById('evidence').files;
+      for (let i = 0; i < files.length; i++) {
+        formData.append('evidence', files[i]);
+      }
+
+      try {
+        // Send to backend - Implement /api/icc/complaint endpoint with encryption
+        const res = await fetch('/api/icc/complaint', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (res.ok) {
+          status.style.color = '#10b981';
+          status.textContent = '✓ Complaint submitted confidentially. ICC will contact you within 24 hours. Case ID sent to your email.';
+          document.getElementById('icc-form').reset();
+        } else {
+          throw new Error('Submission failed');
+        }
+      } catch (err) {
+        status.style.color = '#ef4444';
+        status.textContent = '✗ Error submitting complaint. Please email icc@cognigrad.com directly or call +91-8948322222.';
+      } finally {
+        btn.disabled = false;
+        btn.textContent = 'Submit Confidential Complaint';
+      }
+    }
+  </script>
+</body>
+</html>

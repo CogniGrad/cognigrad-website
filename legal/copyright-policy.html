@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copyright & Takedown Policy – CogniGrad</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+      --accent: #8b5cf6;
+      --accent-2: #c4b5fd;
+      --border: rgba(255,255,255,0.08);
+      --red: #ef4444;
+      --green: #10b981;
+      --amber: #f59e0b;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Inter, system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      padding: 40px 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+    }
+    .header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, #fff, var(--accent-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    .meta {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    .badge-row {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+    .badge {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1px solid var(--border);
+    }
+    .badge.purple { background: rgba(139,92,246,0.15); color: var(--accent-2); }
+    .badge.green { background: rgba(16,185,129,0.15); color: #6ee7b7; }
+    .badge.amber { background: rgba(245,158,11,0.15); color: #fcd34d; }
+    
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+    .card h2 {
+      font-size: 1.4rem;
+      color: #fff;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card h3 {
+      font-size: 1.1rem;
+      color: var(--accent-2);
+      margin: 20px 0 10px 0;
+    }
+    .card p, .card li {
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .card ul, .card ol {
+      padding-left: 20px;
+      margin: 10px 0;
+    }
+    .card li {
+      margin-bottom: 8px;
+    }
+    .alert {
+      padding: 16px;
+      border-radius: 12px;
+      margin: 20px 0;
+      border: 1px solid;
+    }
+    .alert.red {
+      background: rgba(239,68,68,0.1);
+      border-color: rgba(239,68,68,0.3);
+      color: #fca5a5;
+    }
+    .alert.amber {
+      background: rgba(245,158,11,0.1);
+      border-color: rgba(245,158,11,0.3);
+      color: #fcd34d;
+    }
+    .alert.green {
+      background: rgba(16,185,129,0.1);
+      border-color: rgba(16,185,129,0.3);
+      color: #6ee7b7;
+    }
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin: 20px 0;
+    }
+    .timeline-item {
+      display: flex;
+      gap: 15px;
+      align-items: start;
+    }
+    .timeline-badge {
+      background: var(--accent);
+      color: white;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+      margin-top: 20px;
+    }
+    .contact-item {
+      background: rgba(255,255,255,0.03);
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .contact-item strong {
+      color: var(--accent-2);
+      display: block;
+      margin-bottom: 5px;
+    }
+    a {
+      color: var(--accent-2);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .footer-note {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+    code {
+      background: rgba(255,255,255,0.05);
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📚 Copyright & Takedown Policy</h1>
+      <div class="meta">
+        <strong>Effective Date:</strong> June 1, 2026 | <strong>Last Updated:</strong> May 25, 2026
+      </div>
+      <div class="badge-row">
+        <span class="badge purple">IT Act 2000 Sec 79</span>
+        <span class="badge purple">Copyright Act 1957</span>
+        <span class="badge purple">DMCA Compliant</span>
+        <span class="badge green">Safe Harbor</span>
+        <span class="badge amber">36hr Response</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>1. Purpose & Legal Framework</h2>
+      <p>CogniGrad respects intellectual property rights. This policy complies with:</p>
+      <ul>
+        <li><strong>Copyright Act, 1957</strong> (India)</li>
+        <li><strong>IT Act, 2000 Section 79</strong> – Intermediary Guidelines & Digital Media Ethics Code, 2021</li>
+        <li><strong>Digital Millennium Copyright Act (DMCA)</strong> – For international copyright holders</li>
+      </ul>
+      <p>CogniGrad is an "intermediary" under IT Act 2000. We do not pre-screen user content but respond expeditiously to valid takedown notices. We expect users, tutors, and contributors to upload only original or properly licensed materials.</p>
+    </div>
+
+    <div class="card">
+      <h2>2. What Is Copyright Infringement</h2>
+      <p>Unauthorized use of: textbooks, PDFs, videos, images, course content, software, exam papers, or any work protected by copyright.</p>
+      <h3>Examples prohibited on CogniGrad:</h3>
+      <ul>
+        <li>Uploading NCERT/CBSE/ICSE textbook PDFs</li>
+        <li>Sharing paid Udemy/Coursera/BYJU’S course videos</li>
+        <li>Distributing copyrighted exam papers without permission</li>
+        <li>Using copyrighted music/images in lessons without license</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>3. Reporting Copyright Infringement – Takedown Notice</h2>
+      <p>If you believe content on CogniGrad infringes your copyright, submit a <strong>Takedown Notice</strong> to our Grievance Officer.</p>
+      
+      <div class="alert red">
+        <strong>⚠️ Legal Requirement:</strong> Your notice MUST include all 7 items below per IT Rules 2021 Rule 3(1)(b). Incomplete notices will be rejected.
+      </div>
+
+      <h3>Required Information:</h3>
+      <ol>
+        <li><strong>Identification of copyrighted work</strong>: Title, author, registration number if any, or URL to original.</li>
+        <li><strong>Identification of infringing material</strong>: Exact URL on CogniGrad OR description + screenshot. We cannot act on “all videos” – must be specific.</li>
+        <li><strong>Your contact info</strong>: Full legal name, address, phone, email. No pseudonyms.</li>
+        <li><strong>Good faith statement</strong>: “I have a good faith belief that use of the material in the manner complained of is not authorized by the copyright owner, its agent, or the law.”</li>
+        <li><strong>Accuracy statement</strong>: “I swear, under penalty of perjury, that the information in this notice is accurate and I am the copyright owner or authorized to act on behalf of the owner.”</li>
+        <li><strong>Electronic/physical signature</strong>: Typed name + date counts as electronic signature per IT Act 2000.</li>
+        <li><strong>Declaration of ownership</strong>: Attach proof – copyright certificate, assignment deed, or link to your original work predating upload.</li>
+      </ol>
+
+      <h3>Where to Send:</h3>
+      <p><strong>📧 Email:</strong> <a href="mailto:copyright@cognigrad.com">copyright@cognigrad.com</a> AND <a href="mailto:grievance@cognigrad.com">grievance@cognigrad.com</a><br>
+      <strong>Subject:</strong> "Copyright Takedown Notice – [Your Work Title]"<br>
+      <strong>Grievance Officer:</strong> Ajit, +91-8948322222 per IT Rules 2021</p>
+    </div>
+
+    <div class="card">
+      <h2>4. CogniGrad Action – Timeline per IT Rules 2021</h2>
+      <div class="alert amber">
+        <strong>⏱️ We act fast:</strong> Upon receiving <strong>valid</strong> notice, we follow strict legal timelines or lose safe harbor protection.
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span class="timeline-badge">36 Hours</span>
+          <div>Acknowledge receipt to you</div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-badge">72 Hours</span>
+          <div>Remove/disable access to infringing content + notify uploader</div>
+        </div>
+        <div class="timeline-item">
+          <span class="timeline-badge">15 Days</span>
+          <div>Resolve complaint. If invalid, we restore content</div>
+        </div>
+      </div>
+      <p><strong>We do NOT notify you before takedown.</strong> Per IT Act 79, intermediaries must act expeditiously or lose safe harbor protection.</p>
+    </div>
+
+    <div class="card">
+      <h2>5. Counter Notice – If Your Content Was Removed in Error</h2>
+      <p>If you believe takedown was mistaken, submit a <strong>Counter Notice</strong> with:</p>
+      <ol>
+        <li><strong>Identification</strong>: URL of removed content + date it appeared before removal</li>
+        <li><strong>Perjury statement</strong>: “I swear, under penalty of perjury, that I have a good faith belief the material was removed due to mistake or misidentification.”</li>
+        <li><strong>Your details</strong>: Name, address, phone, email</li>
+        <li><strong>Jurisdiction consent</strong>: “I consent to jurisdiction of Courts in Lucknow, Uttar Pradesh, India for any action related to this counter notice.”</li>
+        <li><strong>Signature</strong>: Electronic/physical</li>
+        <li><strong>Proof of right</strong>: Explain why you have right to use – e.g., “I am author”, “Fair use for education s.52”, “Licensed from publisher”</li>
+      </ol>
+      <p><strong>📧 Send to</strong>: <a href="mailto:copyright@cognigrad.com">copyright@cognigrad.com</a><br>
+      <strong>Subject</strong>: "Counter Notice – [Content Title]"</p>
+      <p><strong>Process</strong>: We forward your counter notice to complainant within 48hrs. If they don’t file court case in <strong>10 business days</strong>, we restore content in <strong>10-14 business days</strong> per IT Rules.</p>
+    </div>
+
+    <div class="card">
+      <h2>6. Repeat Infringer Policy – Three Strikes</h2>
+      <p>CogniGrad terminates accounts of repeat infringers per IT Act 2000:</p>
+      <ul>
+        <li><strong>Strike 1</strong>: Warning + content removed + mandatory copyright training</li>
+        <li><strong>Strike 2</strong>: 30-day suspension + content removed</li>
+        <li><strong>Strike 3</strong>: Permanent termination + IP ban. No refund.</li>
+        <li><strong>Egregious cases</strong>: Single instance of mass piracy = immediate termination</li>
+      </ul>
+      <p>We maintain a register of terminated users for 180 days per IT Rules.</p>
+    </div>
+
+    <div class="card">
+      <h2>7. Tutor & User Responsibilities – You Are Liable</h2>
+      <ol>
+        <li><strong>Upload only what you own or license</strong>: Tutors must ensure lesson materials, PPTs, videos, worksheets are original or licensed.</li>
+        <li><strong>No copyrighted textbooks</strong>: Don’t upload NCERT, RD Sharma, HC Verma PDFs. Link to publisher site instead.</li>
+        <li><strong>Fair Use s.52</strong>: Limited quotes for teaching allowed. Full chapters = infringement.</li>
+        <li><strong>Indemnity</strong>: Per Tutor Agreement, you indemnify CogniGrad for copyright claims from your uploads. We will recover legal costs from you.</li>
+        <li><strong>Prohibited</strong>: Recording other tutors’ classes, screen-sharing paid courses, sharing exam paper leaks.</li>
+      </ol>
+    </div>
+
+    <div class="card">
+      <h2>8. Disclaimer & Safe Harbor – IT Act Section 79</h2>
+      <p>CogniGrad is an <strong>intermediary</strong> and not liable for user-generated content provided we:</p>
+      <ol>
+        <li>Don’t initiate transmission, select receiver, or modify content</li>
+        <li>Follow due diligence: Publish this policy + appoint Grievance Officer + act on takedowns</li>
+        <li>Remove content within 36hrs of valid notice</li>
+      </ol>
+      <p><strong>We do not monitor all uploads.</strong> If you see infringement, report it. We rely on you.</p>
+    </div>
+
+    <div class="card">
+      <h2>9. False Claims – Penalty</h2>
+      <div class="alert red">
+        <strong>⚠️ Perjury Warning:</strong> Submitting false DMCA/Copyright notice = perjury under IPC Section 191. You may be liable for damages to user whose content was wrongly removed + legal costs. Don’t abuse this system.
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>10. Updates</h2>
+      <p>This Policy updated periodically. Material changes notified via email + in-app banner 30 days prior per IT Rules 2021. Continued use = acceptance.</p>
+    </div>
+
+    <div class="card">
+      <h2>11. Contact Information</h2>
+      <div class="contact-grid">
+        <div class="contact-item">
+          <strong>Copyright/DMCA Agent</strong>
+          <a href="mailto:copyright@cognigrad.com">copyright@cognigrad.com</a>
+        </div>
+        <div class="contact-item">
+          <strong>Grievance Officer IT Rules 2021</strong>
+          <a href="mailto:grievance@cognigrad.com">grievance@cognigrad.com</a><br>
+          +91‑8948322222
+        </div>
+        <div class="contact-item">
+          <strong>Support</strong>
+          <a href="mailto:support@cognigrad.com">support@cognigrad.com</a>
+        </div>
+        <div class="contact-item">
+          <strong>Privacy</strong>
+          <a href="mailto:privacy@cognigrad.com">privacy@cognigrad.com</a>
+        </div>
+      </div>
+      <p style="margin-top: 20px; color: var(--muted);">
+        <strong>Postal</strong>: Ajit, Grievance Officer, CogniGrad, 645E/6A Yashodapuram, Sector I, Jankipuram, Lucknow, UP 226010
+      </p>
+    </div>
+
+    <div class="footer-note">
+      © 2026 CogniGrad. All rights reserved. | 
+      <a href="/privacy">Privacy Policy</a> | 
+      <a href="/terms">Terms of Service</a> | 
+      <a href="/community-guidelines">Community Guidelines</a> |
+      <a href="/tutor-terms">Tutor Agreement</a>
+    </div>
+  </div>
+</body>
+</html>
